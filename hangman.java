@@ -27,9 +27,9 @@ public class hangman implements IHangman{
 			}
 			return arrofstrings;
 		}
-		public void setDictionary(String[] words)
+		public void setDictionary(String[] arrofstrings)
 		{
-			dic = words;
+			dic = arrofstrings;
 		}
 		public String selectRandomSecretWord()
 		{
@@ -49,17 +49,17 @@ public class hangman implements IHangman{
 			return temp; //the secword
 			
 		}
-		public String guess(Character c) throws Exception
+		public String guess(Character l) throws Exception
 		{
-			if(c>='A' && c<'z') //A is the least ascii in chars & z is the largest 
+			if(l>='A' && l<'z') //A is the least ascii in chars & z is the largest 
 			{
-				if(secword.contains(Character.toLowerCase(c)+""))//check if the char is exist
+				if(secword.contains(Character.toLowerCase(l)+""))//check if the char is exist
 				{
 					for(int i=0;i<secword.length();i++)//how many times the char is exist
 					{
-						if(secword.toLowerCase().charAt(i)==Character.toLowerCase(C))
+						if(secword.toLowerCase().charAt(i)==Character.toLowerCase(l))
 						{
-							fill[i]=Character.toLowerCase(c);
+							fill[i]=Character.toLowerCase(l);
 						}
 					}
 				}
